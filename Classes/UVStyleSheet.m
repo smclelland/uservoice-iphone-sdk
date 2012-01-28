@@ -71,7 +71,7 @@ static UVStyleSheet *styleSheet;
 
 
 + (UIColor *)bottomSeparatorColor {
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0) {
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >=  5.0) {
         CGFloat hue, saturation, brightness, alpha;
         UIColor *reference = [[self styleSheet] darkZebraBgColor];
         [reference getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
