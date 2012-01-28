@@ -14,6 +14,7 @@
 	NSString *secret;
 }
 
+
 @property (nonatomic, retain) NSString *site;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic, retain) NSString *secret;
