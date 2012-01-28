@@ -58,18 +58,28 @@ static UVStyleSheet *styleSheet;
 }
 
 + (UIColor *)topSeparatorColor {
-    CGFloat hue, saturation, brightness, alpha;
-    UIColor *reference = [[self styleSheet] lightZebraBgColor];
-    [reference getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
-    return [UIColor colorWithHue:hue saturation:saturation - 0.1 brightness:brightness + 0.15 alpha:alpha];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5.0) {
+        CGFloat hue, saturation, brightness, alpha;
+        UIColor *reference = [[self styleSheet] lightZebraBgColor];
+        [reference getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+        return [UIColor colorWithHue:hue saturation:saturation - 0.1 brightness:brightness + 0.15 alpha:alpha];
+    }
+    else {
+        return [UIColor blueColor];
+    }
 }
 
 
 + (UIColor *)bottomSeparatorColor {
-    CGFloat hue, saturation, brightness, alpha;
-    UIColor *reference = [[self styleSheet] darkZebraBgColor];
-    [reference getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
-    return [UIColor colorWithHue:hue saturation:saturation - 0.1 brightness:brightness - 0.2 alpha:alpha];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5.0) {
+        CGFloat hue, saturation, brightness, alpha;
+        UIColor *reference = [[self styleSheet] darkZebraBgColor];
+        [reference getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+        return [UIColor colorWithHue:hue saturation:saturation - 0.1 brightness:brightness - 0.2 alpha:alpha];
+    }
+    else {
+        return [UIColor blueColor];
+    }
 }
 
 + (UIColor *)tableViewHeaderColor {
