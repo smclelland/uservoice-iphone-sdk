@@ -12,7 +12,6 @@
 // Several UIColor extensions
 // Adapted from <http://github.com/ars/uicolor-utilities>
 //
-//
 @interface UIColor (UV_UIColor_Additions)
 
 + (UIColor *)colorWithRGBHex:(UInt32)hex;
